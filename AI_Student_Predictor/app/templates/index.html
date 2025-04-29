@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Student Performance Predictor</title>
+</head>
+<body>
+    <h1>AI Student Performance Predictor</h1>
+    <form action="/predict" method="POST">
+        <label for="gender">Gender:</label>
+        <select name="gender" required>
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+        </select><br><br>
+
+        <label for="race_ethnicity">Race/Ethnicity:</label>
+        <select name="race_ethnicity" required>
+            <option value="0">Group A</option>
+            <option value="1">Group B</option>
+            <option value="2">Group C</option>
+            <option value="3">Group D</option>
+            <option value="4">Group E</option>
+        </select><br><br>
+
+        <label for="parental_level_of_education">Parental Level of Education:</label>
+        <select name="parental_level_of_education" required>
+            <option value="0">Some College</option>
+            <option value="1">Associate's Degree</option>
+            <option value="2">Bachelor's Degree</option>
+            <option value="3">High School</option>
+            <option value="4">Master's Degree</option>
+        </select><br><br>
+
+        <label for="lunch">Lunch:</label>
+        <select name="lunch" required>
+            <option value="0">Standard</option>
+            <option value="1">Free/Reduced</option>
+        </select><br><br>
+
+        <label for="test_preparation_course">Test Preparation Course:</label>
+        <select name="test_preparation_course" required>
+            <option value="0">None</option>
+            <option value="1">Completed</option>
+        </select><br><br>
+
+        <label for="math_score">Math Score:</label>
+        <input type="number" name="math_score" required><br><br>
+
+        <label for="reading_score">Reading Score:</label>
+        <input type="number" name="reading_score" required><br><br>
+
+        <label for="writing_score">Writing Score:</label>
+        <input type="number" name="writing_score" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
